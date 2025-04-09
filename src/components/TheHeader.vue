@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 header {
   background-color: #2c2b2b;
   position: fixed;
@@ -39,25 +39,32 @@ header {
 ul {
   display: flex;
   flex-direction: row;
-  gap: 60px; /* reduzido para evitar quebra */
-  flex-wrap: nowrap; /* impede quebra de linha */
+  gap: 60px;
+  flex-wrap: nowrap;
 }
+
 
 p {
   color: white;
   font-size: 20px;
-  white-space: nowrap; /* impede quebra dentro de um item */
-}
-
-p:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  white-space: nowrap;
+  margin: 0px;
 }
 
 
 .logo {
   width: 100px;
   height: auto;
+}
+
+@media (max-width: 1200px) {
+  ul {
+    gap: 30px;
+  }
+
+  p {
+    font-size: 15px;
+  }
 }
 
 </style>

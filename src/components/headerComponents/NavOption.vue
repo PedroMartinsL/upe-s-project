@@ -1,15 +1,20 @@
 <template>
-    <div class="slot-wrapper">
-      <slot></slot>
-    </div>
-  </template>
+  <div class="nav-option">
+    <slot></slot>
+  </div>
+</template>
 
-  <script>
-</script>
+<script></script>
 
-  <style>
-  
-  </style>
-  
+<style scoped>
+.nav-option {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+  transition: border-color 0.3s ease;
+}
 
-  
+.nav-option:hover {
+  border-color: white;
+}
+</style>
