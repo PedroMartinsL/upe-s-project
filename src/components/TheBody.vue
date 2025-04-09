@@ -19,6 +19,16 @@ export default {
 
 <style>
 .content {
-  padding-top: 100px; /* igual à altura do header */
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
