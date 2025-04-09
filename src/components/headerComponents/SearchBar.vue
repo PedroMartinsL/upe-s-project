@@ -16,14 +16,14 @@
 .search-wrapper {
   position: relative;
   display: flex;
-  justify-content: flex-end; /* joga o input pra direita */
+  justify-content: flex-end; 
   width: 100%;
   padding-right: 40px;
 }
 
 .search {
   border-radius: 50px;
-  width: 250px; /* largura mais controlada */
+  width: 250px; 
   padding: 8px 30px 8px 10px;
   border: 1px solid #ccc;
   font-size: 16px;
@@ -31,7 +31,7 @@
 
 .search-icon {
   position: absolute;
-  right: 50px; /* relativo ao search-wrapper padding-right */
+  right: 50px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;

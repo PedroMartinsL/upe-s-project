@@ -109,8 +109,8 @@ p {
 }
 
 .dots button {
-  height: 10px;
-  width: 2px;
+  height: 12px;
+  width: 1px;
   margin: 0 5px;
   background-color: #bbb;
   border: none;

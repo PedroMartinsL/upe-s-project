@@ -32,8 +32,8 @@ header {
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* distribui melhor */
-  padding: 0 20px; /* espaço interno nas laterais */
+  justify-content: space-between;
+  padding: 0 20px; 
 }
 
 ul {
