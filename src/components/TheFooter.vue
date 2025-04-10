@@ -1,5 +1,4 @@
 <template>
-  <footer>
     <div id="contact">
       <h1>Contato</h1>
       <ul>
@@ -29,7 +28,6 @@
     <div id="local">
       <h1>Localização</h1>
     </div>
-  </footer>
 </template>
 
 <script></script>

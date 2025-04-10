@@ -1,29 +1,37 @@
 <template>
-  <header>
-    <TheHeader />
-  </header>
-  <main>
-    <TheMain />
-  </main>
-  <footer>
-    <TheFooter />
-  </footer>
+  <div class="layout">
+    <header>
+      <TheHeader />
+    </header>
+    <main>
+      <router-view></router-view>
+    </main>
+    <footer>
+      <TheFooter />
+    </footer>
+  </div>
 </template>
 
 <script>
-import TheFooter from "./components/TheFooter.vue";
-import TheHeader from "./components/TheHeader.vue";
-import TheMain from "./components/TheMain.vue";
+import TheHeader from './components/TheHeader.vue';
+import TheFooter from './components/TheFooter.vue';
+
 export default {
   components: {
-    TheHeader,
-    TheMain,
     TheFooter,
-  },
-};
+    TheHeader
+  }
+}
 </script>
 
 <style>
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 footer {
   background-color: #100e1d;
   color: white;
@@ -31,7 +39,6 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  gap: 50px;
 }
 
 header {
@@ -50,5 +57,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
+
 </style>
