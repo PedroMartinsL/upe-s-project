@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .unique {
   max-width: 300px;
   width: 100%;

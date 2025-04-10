@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <div class="header-content">
     <img class="logo" src="../assets/upe.png" alt="upe-logo" />
     <ul>
       <NavOption><p>Home</p></NavOption>
@@ -8,7 +8,7 @@
       <NavOption><p>Contato</p></NavOption>
     </ul>
     <SearchBar></SearchBar>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -23,17 +23,9 @@ export default {
 </script>
 
 <style scoped>
-header {
-  background-color: #2c2b2b;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100px;
+.header-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px; 
+  gap: 40px;
 }
 
 ul {
@@ -46,7 +38,7 @@ ul {
 
 p {
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   white-space: nowrap;
   margin: 0px;
 }
@@ -57,14 +49,27 @@ p {
   height: auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   ul {
     gap: 30px;
   }
 
   p {
-    font-size: 15px;
+    font-size: 20px;
   }
+}
+
+@media (max-width: 1000px) {
+  ul {
+    display: none;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+  
 }
 
 </style>

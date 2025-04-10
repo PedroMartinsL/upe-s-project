@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .singleCourse {
   display: flex;
   flex-wrap: wrap;

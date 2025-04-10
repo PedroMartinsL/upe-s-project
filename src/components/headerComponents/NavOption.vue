@@ -16,5 +16,6 @@
 
 .nav-option:hover {
   border-color: white;
+  cursor: pointer;
 }
 </style>

@@ -1,23 +1,25 @@
 <template>
-  <div class="carousel-container">
-    <figure class="actualNew">
-      <img :src="currentNew.source" :alt="currentNew.alt" />
-      <h1>{{ currentNew.titulo }}</h1>
-      <p>{{ currentNew.paragrafo }}</p>
-    </figure>
+  <div class="carousel-background">
+    <div class="carousel-container">
+      <figure class="actualNew">
+        <img :src="currentNew.source" :alt="currentNew.alt" />
+        <h1>{{ currentNew.titulo }}</h1>
+        <p>{{ currentNew.paragrafo }}</p>
+      </figure>
 
-    <div class="dots">
-      <button
-        v-for="(item, index) in news"
-        :key="item.alt"
-        :class="{ active: index === currentIndex }"
-        @click="goToImage(index)"
-      ></button>
+      <div class="dots">
+        <button
+          v-for="(item, index) in news"
+          :key="item.alt"
+          :class="{ active: index === currentIndex }"
+          @click="goToImage(index)"
+        ></button>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
+<script scoped>
 export default {
   data() {
     return {
@@ -66,23 +68,25 @@ export default {
       this.currentIndex = index;
       this.startImageRotation();
     },
+  },
+  mounted () {
+    this.startImageRotation();
   }
 };
 </script>
 
 <style scoped>
-.carousel-container {
+.carousel-background {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: #222;
   padding: 20px 300px;
-  width: 50%;
   border-radius: 2%;
-  min-height: 600px;
 }
 
 .actualNew img {
   width: 100%;
-  max-height: 400px;
   object-fit: cover;
   border-radius: 10px;
 }
