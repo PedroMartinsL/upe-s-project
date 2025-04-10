@@ -58,8 +58,4 @@ ul {
   padding-inline-start: 0px;
 }
 
-li {
-  list-style-type: none;
-}
-
 </style>

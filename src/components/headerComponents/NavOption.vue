@@ -5,6 +5,9 @@
         <router-link to="/home">Home</router-link>
       </li>
       <li>
+        <router-link to="/news">Notícias</router-link>
+      </li>
+      <li>
         <router-link to="/ensino">Ensino</router-link>
       </li>
       <li>
@@ -21,14 +24,9 @@
 </script>
 
 <style scoped>
-li {
-  list-style-type: none;
-}
-
-
 a {
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
   border: 2px solid transparent;
   border-radius: 5px;
@@ -54,13 +52,13 @@ ul {
   flex-wrap: nowrap;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   ul {
     gap: 30px;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   ul {
     display: none;
   }

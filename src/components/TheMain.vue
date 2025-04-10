@@ -1,7 +1,7 @@
 <template>
-    <div class="content" >
-      <section id="news">
-        <h1><strong>Notícias</strong></h1>
+    <div id="content" >
+      <section id="highlights">
+        <h1><strong>Destaques</strong></h1>
         <News />
       </section>
       <section id="course">
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import News from "./bodyComponents/NewsRoulette.vue";
+import News from "./bodyComponents/HighlightRoulette.vue";
 import CoursesHome from "./bodyComponents/CoursesHome.vue";
 export default {
   components: {

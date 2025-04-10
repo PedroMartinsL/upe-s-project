@@ -4,6 +4,8 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './components/HomePage.vue';
 import NotFound from './components/NotFound.vue';
+import NewsList from './components/news/NewsList.vue';
+import NewsPage from './components/news/NewsPage.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +18,16 @@ const router = createRouter({
             default: HomePage,
         },
       }, 
+      {
+        name: 'news',
+        path: '/news',
+        components: { 
+            default: NewsList,
+        },
+        children: [
+          { path: ':newsId', component: NewsPage, props: true},
+        ]
+      },
       { path: '/:notFound(.*)', component: NotFound },
     ]
   });

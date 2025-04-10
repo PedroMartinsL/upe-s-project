@@ -3,10 +3,9 @@
     <div class="carousel-container">
       <figure class="actualNew">
         <img :src="currentNew.source" :alt="currentNew.alt" />
-        <h1>{{ currentNew.titulo }}</h1>
-        <p>{{ currentNew.paragrafo }}</p>
       </figure>
-
+      <h1>{{ currentNew.titulo }}</h1>
+      <p>{{ currentNew.paragrafo }}</p>
       <div class="dots">
         <button
           v-for="(item, index) in news"
@@ -19,25 +18,25 @@
   </div>
 </template>
 
-<script scoped>
+<script>
 export default {
   data() {
     return {
       news: [
         {
-          source: require("@/assets/newsImage/ete.jpg"),
+          source: require("@/assets/highlights/ete.jpg"),
           alt: "ete-image",
           titulo: "Nova sede Surubim",
           paragrafo: "Lorem",
         },
         {
-          source: require("@/assets/newsImage/sede.jpg"),
+          source: require("@/assets/highlights/sede.jpg"),
           alt: "sede-image",
           titulo: "Prédio da UPE Recife",
           paragrafo: "Lorem1",
         },
         {
-          source: require("@/assets/newsImage/good.jpg"),
+          source: require("@/assets/highlights/good.jpg"),
           alt: "good-view-image",
           titulo: "Uma foto caprichosa",
           paragrafo: "Lorem2",
@@ -86,7 +85,7 @@ export default {
 }
 
 .actualNew img {
-  width: 100%;
+  
   object-fit: cover;
   border-radius: 10px;
 }
