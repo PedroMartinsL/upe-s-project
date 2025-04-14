@@ -25,12 +25,11 @@ export default {
             const date = new Date();
 
             const dataFormatada = date.toLocaleDateString('pt-BR');
-            const horaFormatada = date.toLocaleTimeString('pt-BR');
             try {
                 await axios.post('https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/surveys.json', {
                     title: this.enteredTitle,
                     content: this.content,
-                    published: horaFormatada + "  " + dataFormatada,
+                    published: "Publicado em " + dataFormatada,
                 });
                 this.enteredTitle = "";
                 this.content = "";

@@ -1,12 +1,14 @@
 <template>
-  <ul v-if="hasNotice">
-    <li v-for="news in arrayOfNews" :key="news.id">
-      <div class="newsBox">
+  <div class="content">
+    <h1>Notícias</h1>
+    <ul v-if="hasNotice">
+      <li v-for="news in arrayOfNews" :key="news.id">
         <NewsComponent :news="news" />
-      </div>
-    </li>
-  </ul>
-  <span v-else> Nenhuma notícia foi publicada ainda.</span>
+      </li>
+    </ul>
+    <span v-else> Nenhuma notícia foi publicada ainda.</span>
+  </div>
+
 </template>
 
 <script>
@@ -19,11 +21,6 @@ export default {
     return {
       totalPerPage: 5,
       arrayOfNews: [],
-      conteudo: {
-        title: "Alunos da upe adotam o novo mascote do vuex",
-        caminho: pet,
-        published: "15:55 10/04", textBody: "Mascote em formato da casa do bob é a nova sensação da upe.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam debitis cupiditate architecto unde! Rerum cum animi vitae minima inventore blanditiis sapiente quas ab repudiandae, sed placeat, accusantium vel illo.",
-      },
     };
   },
   methods: {
@@ -62,9 +59,32 @@ export default {
     }
   },
   mounted() {
-  this.loadNews();
-}
+    this.loadNews();
+  }
 };
 </script>
 
-<style></style>
+<style scoped>
+  .content {
+    border: 1px solid rgb(205, 197, 197, 0.4);
+    width: 80%;
+    padding: 20px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    margin: 0;
+    padding-inline-start: 0;
+  }
+  h1 {
+    line-height: 1;
+    margin: 0 0 15px;
+    font-size: 35px;
+    color: #444444;
+    font-family: Roboto Condensed;
+    
+    unicode-bidi: isolate;
+  }
+</style>

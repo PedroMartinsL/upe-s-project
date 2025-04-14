@@ -1,5 +1,5 @@
 <template>
-    <div id="content" >
+    <div class="content" >
       <section id="highlights">
         <h1><strong>Destaques</strong></h1>
         <News />
