@@ -6,7 +6,9 @@ import HomePage from './components/HomePage.vue'
 import NotFound from './components/NotFound.vue'
 import NewsList from './components/news/NewsList.vue'
 import NewsPage from './components/news/NewsPage.vue'
-import AuthPage from './components/authComponents/AuthPage.vue' 
+import AuthPage from './components/authComponents/AuthPage.vue'
+import FormNews from './components/news/FormNews.vue'
+import NewsTab from './components/NewsTab.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,15 +25,17 @@ const router = createRouter({
       name: 'news',
       path: '/news',
       components: {
-        default: NewsList
+        default: NewsTab
       },
       children: [
-        { path: ':newsId', component: NewsPage, props: true }
+        { path: '', component: NewsList, props: true },
+        { path: ':newsId', component: NewsPage, props: true },
+        { path: 'submit', component: FormNews, props: true },
       ]
     },
     {
-      name: 'auth',
-      path: '/auth',
+      name: 'login',
+      path: '/login',
       components: {
         default: AuthPage
       }
