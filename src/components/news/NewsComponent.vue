@@ -1,16 +1,16 @@
 <template>
     <div class="box">
-        <img :src="conteudo.caminho" alt="pinia-image">
-        <a href="/">{{ conteudo.title }}</a>
-        <span>{{ conteudo.published }}</span>
-        <p>{{ conteudo.textBody }}</p>
+        <img :src="news.caminho" alt="pinia-image">
+        <a href="/">{{ news.title }}</a>
+        <span>{{ news.published }}</span>
+        <p>{{ news.content }}</p>
     </div>
 
 </template>
 
 <script>
     export default {
-        props: ['conteudo'],
+        props: ['news'],
         methods: {
             redirectNew() {
 

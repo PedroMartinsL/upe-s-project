@@ -28,9 +28,9 @@ const router = createRouter({
         default: NewsTab
       },
       children: [
-        { path: '', component: NewsList, props: true },
-        { path: ':newsId', component: NewsPage, props: true },
-        { path: 'submit', component: FormNews, props: true },
+        { name: 'listOf', path: '', component: NewsList, props: true },
+        { name: 'newPerId', path: ':newsId', component: NewsPage, props: true },
+        { name: 'submit', path: 'submit', component: FormNews, props: true },
       ]
     },
     {
