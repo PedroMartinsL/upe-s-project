@@ -1,5 +1,6 @@
 <template>
-  <aside class="sidebar" v-show="isActive">
+  <transition name="fade-slide">
+  <aside class="sidebar" v-if="isActive">
     <ul>
       <li><router-link to="/">Início</router-link></li>
       <li><router-link to="/news">Notícias</router-link></li>
@@ -9,6 +10,7 @@
       </router-link>
     </ul>
   </aside>
+</transition>
 </template>
 
 <script>
@@ -28,6 +30,17 @@ export default {
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   padding: 20px;
   z-index: 1;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 .close {
@@ -50,5 +63,9 @@ export default {
 
 a {
   color: #444;
+}
+
+.fade-slide-enter-active, .fade-slide-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 </style>
