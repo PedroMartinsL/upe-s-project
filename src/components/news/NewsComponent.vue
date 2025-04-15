@@ -1,11 +1,11 @@
 <template>
     <div class="box">
         <img :src="news.caminho" alt="pinia-image">
-        <a href="/">
+        <router-link :to="`/news/${news.id}`">
             <h2>{{ news.title }}</h2>
-        </a>
+        </router-link>
         <span><i>{{ news.published }}</i></span>
-        <p>{{ news.content }}</p>
+        <p>{{ news.overview }}</p>
     </div>
 
 </template>
@@ -13,11 +13,6 @@
 <script>
 export default {
     props: ['news'],
-    methods: {
-        redirectNew() {
-
-        }
-    }
 }
 </script>
 
@@ -45,7 +40,6 @@ span {
 
 p {
     font-size: 12pt;
-    font-family: Roboto Condensed;
     color: #444444;
 }
 

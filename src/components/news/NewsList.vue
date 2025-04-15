@@ -36,9 +36,11 @@ export default {
             results.push({
               id: id,
               title: data[id].title,
-              content: data[id].content,
+              textBody: this.textBody,
+              references: this.references,
+              overview: data[id].overview,
               published: data[id].published,
-              caminho: pet
+              caminho: pet 
             });
           }
           this.arrayOfNews = results;
@@ -69,6 +71,7 @@ export default {
     border: 1px solid rgb(205, 197, 197, 0.4);
     width: 80%;
     padding: 20px;
+    margin-top: 20px;
   }
   ul {
     display: flex;

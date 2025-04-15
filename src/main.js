@@ -29,7 +29,7 @@ const router = createRouter({
       },
       children: [
         { name: 'listOf', path: '', component: NewsList, props: true },
-        { name: 'newPerId', path: ':newsId', component: NewsPage, props: true },
+        { name: 'newPerId', path: ':id', component: NewsPage, props: true },
         { name: 'submit', path: 'submit', component: FormNews, props: true },
       ]
     },

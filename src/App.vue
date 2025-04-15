@@ -30,6 +30,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 footer {
