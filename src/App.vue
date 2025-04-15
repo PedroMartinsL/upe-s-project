@@ -1,8 +1,11 @@
 <template>
   <div class="layout">
     <header>
-      <TheHeader />
+      <TheHeader :is-active="isActive" @toggle-aside="toggleSidebar"/>
+      <!-- emitindo o active para o controle do botão -->
+       <!-- recebendo o método do header -->
     </header>
+    <SideBar :isActive="isActive"/>
     <main>
       <router-view></router-view>
     </main>
@@ -15,12 +18,24 @@
 <script>
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
+import SideBar from "./components/SideBar.vue";
 
 export default {
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.isActive = !this.isActive;
+    }
+  },
   components: {
     TheFooter,
-    TheHeader
-  }
+    TheHeader,
+    SideBar
+  },
 }
 </script>
 
@@ -40,6 +55,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  z-index: 2;
 }
 
 header {
@@ -50,6 +66,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2
 }
 
 main {
