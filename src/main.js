@@ -6,9 +6,10 @@ import HomePage from './components/HomePage.vue'
 import NotFound from './components/NotFound.vue'
 import NewsList from './components/news/NewsList.vue'
 import NewsPage from './components/news/NewsPage.vue'
-import AuthPage from './components/authComponents/AuthPage.vue'
 import FormNews from './components/news/FormNews.vue'
 import NewsTab from './components/NewsTab.vue'
+import LoginPage from './components/views/LoginPage.vue'
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -34,11 +35,9 @@ const router = createRouter({
       ]
     },
     {
-      name: 'login',
       path: '/login',
-      components: {
-        default: AuthPage
-      }
+      name: 'Login',
+      component: LoginPage 
     },
     { path: '/:notFound(.*)', component: NotFound }
   ]
