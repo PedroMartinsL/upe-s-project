@@ -22,7 +22,7 @@
   font-size: 16px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .search-wrapper {
     display: none;
   }
