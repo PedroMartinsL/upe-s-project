@@ -1,7 +1,7 @@
 <template>
   <div v-if="currentNews" class="content">
     <h1>{{ currentNews.title }}</h1>
-    <img :src="currentNews.caminho" alt="imagem" />
+    <img :src="currentNews.imgPath" alt="imagem" />
     <span>{{ currentNews.published }}</span>
     <p>{{ currentNews.textBody }}</p>
     <span class="references">
@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import pet from "@/assets/newsImg/pet.png";
 import axios from "axios";
 
 export default {
@@ -28,7 +27,7 @@ export default {
   mounted() {
     axios
       .get(
-        "https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/surveys.json"
+        "https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/shelf.json"
       )
       .then((response) => {
         const data = response.data;
@@ -36,10 +35,11 @@ export default {
           this.currentNews = {
             id: this.id,
             title: data[this.id].title,
-            body: this.body,
+            textBody: data[this.id].textBody,
             overview: data[this.id].overview,
             published: data[this.id].published,
-            caminho: pet,
+            imgPath: data[this.id].imgPath,
+            references: data[this.id].references,
           };
         }
       })

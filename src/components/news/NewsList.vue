@@ -8,12 +8,11 @@
     </ul>
     <span v-else> Nenhuma notícia foi publicada ainda.</span>
   </div>
-
+  <span v-if="error">{{ error }}</span>
 </template>
 
 <script>
 import NewsComponent from "./NewsComponent.vue";
-import pet from "@/assets/newsImg/pet.png";
 import axios from 'axios';
 
 export default {
@@ -21,13 +20,14 @@ export default {
     return {
       totalPerPage: 5,
       arrayOfNews: [],
+      error: null
     };
   },
   methods: {
     loadNews() {
       axios
         .get(
-          'https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/surveys.json'
+          'https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/shelf.json'
         )
         .then((response) => {
           const data = response.data;
@@ -36,11 +36,11 @@ export default {
             results.push({
               id: id,
               title: data[id].title,
-              textBody: this.textBody,
-              references: this.references,
+              textBody: data[id].textBody,
+              references: data[id].references,
               overview: data[id].overview,
               published: data[id].published,
-              caminho: pet 
+              imgPath: data[id].imgPath
             });
           }
           this.arrayOfNews = results;

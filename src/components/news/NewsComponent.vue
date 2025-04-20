@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        <img :src="news.caminho" alt="pinia-image">
+        <img :src="news.imgPath" alt="Imagem da notícia">
         <router-link :to="`/news/${news.id}`">
             <h2>{{ news.title }}</h2>
         </router-link>

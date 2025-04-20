@@ -1,16 +1,26 @@
 <template>
-    <p>Formulário de notícias</p>
-    <form @submit.prevent="postForm">
-        <label for="title">Título da sua notícia</label>
-        <input type="text" v-model.trim="enteredTitle">
-        <label for="title">Resumo</label>
-        <input type="text" v-model.trim="overview">
-        <label for="title">Corpo do texto</label>
-        <input type="textarea" v-model.trim="textBody">
-        <label for="title">Imagem</label>
-        <input type="file" @change="onFileChange" accept="image/*" />
-        <button type="submit">Enviar</button>
-    </form>
+
+    <div class="containerUI">
+        <h1>Formulário de notícias</h1>
+        <form @submit.prevent="postForm">
+            <label for="title">Título da sua notícia</label>
+            <input type="text" v-model.trim="enteredTitle" id="title">
+            <label for="overview">Resumo</label>
+            <input type="text" v-model.trim="overview" id="overview">
+            <label for="textBody">Corpo do texto</label>
+            <textarea
+                id="textBody"
+                v-model.trim="textBody"
+                rows="6"
+                placeholder="Digite o conteúdo da sua notícia aqui..."
+            ></textarea>
+            <label for="references">Referências</label>
+            <input type="text" v-model.trim="references" id="references">
+            <label for="image">Imagem</label>
+            <input type="file" @change="onFileChange" id="image" />
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -19,24 +29,43 @@ export default {
     data() {
         return {
             enteredTitle: "",
-            content: ""
+            overview: "",
+            textBody: "",
+            imageBase64: null
         }
     },
     methods: {
+        onFileChange(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+
+            reader.onload = () => {
+                this.imageBase64 = reader.result;
+            };
+
+            reader.readAsDataURL(file);
+        },
         async postForm() {
             const date = new Date();
-
             const dataFormatada = date.toLocaleDateString('pt-BR');
+
             try {
-                await axios.post('https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/surveys.json', {
+                await axios.post('https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/shelf.json', {
                     title: this.enteredTitle,
                     overview: this.overview,
                     textBody: this.textBody,
                     published: "Publicado em " + dataFormatada,
-                    references: this.references
+                    references: this.references,
+                    imgPath: this.imageBase64
                 });
+
                 this.enteredTitle = "";
-                this.content = "";
+                this.overview = "";
+                this.textBody = "";
+                this.references = "";
+                this.imageBase64 = null;
             } catch (err) {
                 console.error("Erro ao enviar notícia:", err);
             }
@@ -45,4 +74,19 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+  color: #ed1c24;
+  font-family: "Roboto", Sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+</style>
