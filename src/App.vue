@@ -22,6 +22,11 @@ import TheFooter from './components/TheFooter.vue';
 import SideBar from "./components/SideBar.vue";
 
 export default {
+  data() {
+    return {
+      toggleSidebar: false,
+    };
+  },
   setup() {
     const isActive = ref(false);
 

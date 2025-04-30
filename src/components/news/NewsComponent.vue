@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <img :src="news.imgPath" alt="Imagem da notícia">
-        <router-link :to="`/news/${news.id}`">
+        <router-link :to="newsLink">
             <h2>{{ news.title }}</h2>
         </router-link>
         <span><i>{{ news.published }}</i></span>
@@ -13,6 +13,11 @@
 <script>
 export default {
     props: ['news'],
+    computed: {
+        newsLink() {
+            return {name: 'news-page', params: { id: this.news.id }};
+        },
+    },
 }
 </script>
 

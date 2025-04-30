@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "Engenharia de Software",
+    "sobre": "O curso de Engenharia de Software forma profissionais capazes de projetar, desenvolver e manter sistemas de software eficientes, escaláveis e seguros.",
+    "docentes": ["Prof. Ana Lima", "Prof. João Sousa", "Prof. Carla Mendes"],
+    "horarios": {
+      "turno": "Noturno",
+      "inicio": "19:00",
+      "fim": "22:00"
+    },
+    "ementa": [
+      "Engenharia de Requisitos",
+      "Arquitetura de Software",
+      "Testes de Software",
+      "Gerência de Projetos",
+      "DevOps"
+    ],
+    "route": "es-bacharelado"
+  },
+  {
+    "nome": "Sistemas de Informação",
+    "sobre": "O curso de Sistemas de Informação prepara profissionais para atuar com tecnologia e gestão da informação, integrando soluções de TI aos processos organizacionais.",
+    "docentes": [
+      "Prof. Marcos Silva",
+      "Prof. Juliana Rocha",
+      "Prof. Eduardo Castro"
+    ],
+    "horarios": {
+      "turno": "Noturno",
+      "inicio": "19:00",
+      "fim": "22:00"
+    },
+    "ementa": [
+      "Banco de Dados",
+      "Redes de Computadores",
+      "Análise de Sistemas",
+      "Segurança da Informação",
+      "Empreendedorismo em TI"
+    ],
+    "route": "si-bacharelado"
+  }
+]
