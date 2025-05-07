@@ -2,9 +2,15 @@
   <div class="content">
     <h1>Notícias</h1>
     <ul v-if="hasNotice">
-      <li v-for="news in showNews" :key="news.id">
+      <!-- o currentPageNews faz a leitura dinâmica da página atual -->
+      <li v-for="news in currentPageNews" :key="news.id">
         <NewsComponent :news="news" />
       </li>
+      <div>
+        <button @click="lastPage">&lt;</button>
+        <input type="number" v-model="pageIndex" />
+        <button @click="nextPage">&gt;</button>
+      </div>
     </ul>
     <span v-else> Nenhuma notícia foi publicada ainda.</span>
   </div>
@@ -18,10 +24,11 @@ import axios from "axios";
 export default {
   data() {
     return {
-      totalPerPage: 5,
+      totalPerPage: 2,
       showNews: [],
       allNews: [],
       error: null,
+      pageIndex: 1,
     };
   },
   methods: {
@@ -52,7 +59,7 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-          this.error = "Failed too fetch data - please try again later";
+          this.error = "Failed to fetch data - please try again later";
         });
     },
     loadRouteQuery(newRoute) {
@@ -70,13 +77,31 @@ export default {
         this.showNews = this.allNews;
       }
     },
+    nextPage() {
+      if (this.pageIndex < this.totalPages) {
+        this.pageIndex++;
+      }
+    },
+    lastPage() {
+      if (this.pageIndex > 1) {
+        this.pageIndex--;
+      }
+    },
   },
   components: {
     NewsComponent,
   },
   computed: {
     hasNotice() {
-      return this.showNews.length != 0;
+      return this.showNews.length !== 0;
+    },
+    totalPages() {
+      return Math.ceil(this.showNews.length / this.totalPerPage);
+    },
+    currentPageNews() {
+      const startIndex = (this.pageIndex - 1) * this.totalPerPage;
+      const endIndex = startIndex + this.totalPerPage;
+      return this.showNews.slice(startIndex, endIndex);
     },
   },
   created() {
@@ -85,8 +110,15 @@ export default {
   watch: {
     $route(newRoute) {
       this.loadRouteQuery(newRoute);
-    }
-  }
+    },
+    pageIndex(valor) {
+      if (valor >= 1 && valor <= this.totalPages) {
+        this.currentPageNews;
+      } else {
+        throw new Error("Índice de página inválido. Deve ser >= 1.");
+      }
+    },
+  },
 };
 </script>
 
