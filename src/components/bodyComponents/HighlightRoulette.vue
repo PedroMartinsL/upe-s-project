@@ -6,14 +6,6 @@
       </figure>
       <h1>{{ currentNew.titulo }}</h1>
       <p>{{ currentNew.paragrafo }}</p>
-      <div class="dots">
-        <button
-          v-for="(item, index) in news"
-          :key="item.alt"
-          :class="{ active: index === currentIndex }"
-          @click="goToImage(index)"
-        ></button>
-      </div>
     </div>
   </div>
 </template>
@@ -78,20 +70,27 @@ export default {
 .carousel-background {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
   background-color: #222;
   padding: 20px 300px;
   border-radius: 2%;
+  width: 300px;
+  height: 350px;
+  position: relative;
 }
 
 .actualNew img {
-  
-  object-fit: cover;
+  width: 300px;
+  height: 200px;
+  object-fit: cover; 
   border-radius: 10px;
+  display: block;
 }
 
+
 h1 {
-  font-size: 30px;
+  font-size: 25px;
   color: whitesmoke;
   background-color: rgb(209, 56, 56);
   padding: 10px;
@@ -99,31 +98,11 @@ h1 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 15px;
   text-align: justify;
   padding: 20px 100px;
   background-color: rgb(176, 40, 40);
   color: white;
   margin: 0;
-}
-
-.dots {
-  margin-top: 15px;
-}
-
-.dots button {
-  height: 12px;
-  width: 1px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.dots button.active {
-  background-color: #fff;
 }
 </style>

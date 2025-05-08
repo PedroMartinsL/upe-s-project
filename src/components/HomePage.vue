@@ -1,18 +1,27 @@
 <template>
   <div class="content">
-    <section id="highlights">
-      <h1><strong>Destaques</strong></h1>
-      <HighlightRoulette />
-    </section>
+      <section id="highlights">
+        <h1><strong>Destaques</strong></h1>
+        <hr><br>
+        <HighlightRoulette />
+      </section>
     <section id="news">
       <div class="containerUI">
         <h2>Notícias</h2>
+        <div class="containerNew">
+          <NewsHome />
+          <RedirectsGrid />
+        </div>
       </div>
     </section>
-    <section id="course">
-      <h1>Nossos cursos</h1>
-      <CoursesHome />
+    <section id="course" class="course-section">
+      <img :src="classLogo" alt="logo-turma" class="image-background" />
+      <div class="course-content">
+        <h1>Nossos cursos</h1>
+        <CoursesHome />
+      </div>
     </section>
+
     <div class="containerUI">
       <h1>Corpo docente</h1>
       <section id="team">
@@ -23,10 +32,16 @@
     <section id="sourceUPE">
       <div class="containerUI">
         <h2>HISTÓRIA DA UPE</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Gd_EVZmcWfY?si=8aUit-GfwvLmA9VS"
-          title="YouTube video player" frameborder="0"
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Gd_EVZmcWfY?si=8aUit-GfwvLmA9VS"
+          title="YouTube video player"
+          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
     </section>
   </div>
@@ -36,12 +51,22 @@
 import HighlightRoulette from "./bodyComponents/HighlightRoulette.vue";
 import CoursesHome from "./bodyComponents/CoursesHome.vue";
 import TeatchersScroll from "./bodyComponents/TeatchersScroll.vue";
+import classLogo from "@/assets/highlights/class.jpg";
+import RedirectsGrid from "./bodyComponents/RedirectsGrid.vue";
+import NewsHome from "./bodyComponents/NewsHome.vue";
 
 export default {
+  data() {
+    return {
+      classLogo: classLogo,
+    };
+  },
   components: {
     HighlightRoulette,
     CoursesHome,
     TeatchersScroll,
+    RedirectsGrid,
+    NewsHome,
   },
 };
 </script>
@@ -54,10 +79,28 @@ export default {
 }
 
 h1 {
-  color: #ed1c24;
+  color: #262166;
   font-family: "Roboto", Sans-serif;
   font-size: 40px;
   font-weight: 600;
   text-align: center;
 }
+
+.image-background {
+  position: absolute;
+  top: 1000;
+  left: 0;
+  width: 98.7vw;         
+  height: 100%;         
+  object-fit: cover;     
+  z-index: -1;            
+  opacity: 0.7;
+}
+
+.containerNew {
+  display: flex;
+  flex-direction: row;
+  gap: 40px
+}
+
 </style>
