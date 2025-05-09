@@ -1,24 +1,23 @@
 <template>
   <div class="layout">
     <header>
-      <TheHeader :is-active="isActive" @toggle-aside="toggleSidebar"/>
+      <TheHeader :is-active="isActive" @toggle-aside="toggleSidebar" />
       <!-- emitindo o active para o controle do botão -->
-       <!-- recebendo o método do header -->
+      <!-- recebendo o método do header -->
     </header>
-    <SideBar :isActive="isActive"/>
+    <SideBar :isActive="isActive" />
     <main>
       <router-view></router-view>
     </main>
-    <footer>
-      <TheFooter />
-    </footer>
+
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import { ref, provide } from 'vue';
-import TheHeader from './components/TheHeader.vue';
-import TheFooter from './components/TheFooter.vue';
+import { ref, provide } from "vue";
+import TheHeader from "./components/TheHeader.vue";
+import TheFooter from "./components/TheFooter.vue";
 import SideBar from "./components/SideBar.vue";
 
 export default {
@@ -34,22 +33,20 @@ export default {
       isActive.value = !isActive.value;
     };
 
-    provide('toggleSidebar', toggleSidebar);
-    provide('isActive', isActive);
+    provide("toggleSidebar", toggleSidebar);
+    provide("isActive", isActive);
 
     return { isActive };
   },
   components: {
     TheFooter,
     TheHeader,
-    SideBar
+    SideBar,
   },
-}
+};
 </script>
 
 <style>
-
-
 .containerUI {
   border: 1px solid rgb(205, 197, 197, 0.4);
   padding: 20px;
@@ -77,17 +74,7 @@ h2 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-
-footer {
-  background-color: #100e1d;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  z-index: 2;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 header {
@@ -98,7 +85,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2
+  z-index: 2;
 }
 
 main {
@@ -109,5 +96,4 @@ main {
   align-items: center;
   flex: 1;
 }
-
 </style>

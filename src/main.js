@@ -7,11 +7,12 @@ import NotFound from './components/NotFound.vue'
 import NewsList from './components/news/NewsList.vue'
 import NewsPage from './components/news/NewsPage.vue'
 import FormNews from './components/news/FormNews.vue'
-import NewsTab from './components/NewsTab.vue'
 import LoginPage from './components/views/LoginPage.vue'
-import TeachingTab from './components/TeachingTab.vue'
 import CoursesUPE from './components/teachingComponents/CoursesUPE.vue'
 import TeachingList from './components/teachingComponents/TeachingList.vue'
+import TeachingRedirect from './components/redirects/TeachingRedirect.vue'
+import NewsRedirect from './components/redirects/NewsRedirect.vue'
+import TeachingTab from './components/teachingComponents/TeachingTab.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -28,11 +29,11 @@ const router = createRouter({
       name: 'news',
       path: '/news',
       components: {
-        default: NewsTab
+        default: NewsRedirect
       },
       children: [
-        { name: 'list-news', path: '', component: NewsList, props: true },
-        { name: 'form-nav', path: 'submit', component: FormNews, props: true },
+        { name: 'list-news', path: '', component: NewsList, props: true},
+        { name: 'form-nav', path: 'submeter', component: FormNews, props: true },
         { name: 'news-page', path: ':id', component: NewsPage, props: true },
       ]
     },
@@ -40,11 +41,12 @@ const router = createRouter({
       name: 'ensino',
       path: '/ensino',
       components: {
-        default: TeachingTab
+        default: TeachingRedirect
       },
       children: [
-        { name: 'list-courses', path: '', component: TeachingList, props: true },
-        { name: 'course', path: ':courseId', component: CoursesUPE, props: true },
+        {name: 'tab', path: '', component: TeachingTab, props: true },
+        { name: 'cursos', path: 'cursos', component: TeachingList, props: true },
+        { name: 'course', path: 'cursos/:courseId', component: CoursesUPE, props: true },
       ]
     },
     {

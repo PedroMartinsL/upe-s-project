@@ -90,7 +90,7 @@ h1 {
   position: absolute;
   top: 1000;
   left: 0;
-  width: 98.7vw;         
+  width: 98.6vw;         
   height: 100%;         
   object-fit: cover;     
   z-index: -1;            
