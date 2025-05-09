@@ -51,25 +51,55 @@ export default {
 </script>
 
 <style scoped>
+.content {
+  border: 1px solid rgba(205, 197, 197, 0.4);
+  width: 80%;
+  max-width: 800px;
+  padding: 30px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: 'Roboto', sans-serif;
+}
+
 h1 {
-  margin: 0 0 20px 0;
-  font-size: 35px;
-  color: #444444;
-  font-weight: 400;
-  line-height: 1.1;
+  font-size: 36px;
+  color: #2a2377;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 img {
   align-self: center;
-  max-width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.content {
-    border: 1px solid rgb(205, 197, 197, 0.4);
-    width: 80%;
-    padding: 20px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-  }
+span {
+  color: #888;
+  font-size: 14px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+  white-space: pre-line;
+}
+
+.references {
+  font-style: italic;
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+}
+
 </style>

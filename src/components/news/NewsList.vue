@@ -6,7 +6,7 @@
       <li v-for="news in currentPageNews" :key="news.id">
         <NewsComponent :news="news" />
       </li>
-      <div>
+      <div id="ui-skip">
         <button @click="lastPage">&lt;</button>
         <input type="number" v-model="pageIndex" />
         <button @click="nextPage">&gt;</button>
@@ -137,6 +137,52 @@ ul {
   margin: 0;
   padding-inline-start: 0;
 }
+
+li {
+  list-style: none;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fdfdfd;
+  transition: transform 0.2s linear;
+}
+
+li:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+div > button {
+  margin: 0 5px;
+  padding: 6px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#ui-skip {
+  display: flex;
+  justify-content: center;
+}
+
+div > button:hover {
+  background-color: #0056b3;
+}
+
+div > input[type="number"] {
+  width: 50px;
+  padding: 4px;
+  margin: 0 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
 h1 {
   line-height: 1;
   margin: 0 0 15px;
@@ -145,5 +191,12 @@ h1 {
   font-family: Roboto Condensed;
 
   unicode-bidi: isolate;
+}
+
+/* Remove spinners de seta do input no Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 </style>

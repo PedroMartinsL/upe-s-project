@@ -33,7 +33,7 @@ const router = createRouter({
       },
       children: [
         { name: 'list-news', path: '', component: NewsList, props: true},
-        { name: 'form-nav', path: 'submeter', component: FormNews, props: true },
+        { name: 'form-nav', path: 'submit', component: FormNews, props: true },
         { name: 'news-page', path: ':id', component: NewsPage, props: true },
       ]
     },

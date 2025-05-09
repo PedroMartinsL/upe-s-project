@@ -31,6 +31,7 @@ export default {
             enteredTitle: "",
             overview: "",
             textBody: "",
+            references: "",
             imageBase64: null
         }
     },
@@ -75,18 +76,69 @@ export default {
 </script>
 
 <style>
+.containerUI {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: "Roboto", sans-serif;
+}
+
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #ed1c24;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  background-color: #ed1c24;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #c5141b;
 }
 
 h1 {
   color: #ed1c24;
-  font-family: "Roboto", Sans-serif;
-  font-size: 40px;
-  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
   text-align: center;
+  margin-bottom: 30px;
 }
-
 </style>

@@ -1,14 +1,15 @@
 <template>
   <div class="content">
-      <section id="highlights">
-        <h1><strong>Destaques</strong></h1>
-        <hr><br>
-        <HighlightRoulette />
-      </section>
+    <section id="highlights">
+      <h1><strong>Destaques</strong></h1>
+      <hr />
+      <br />
+      <HighlightRoulette />
+    </section>
     <section id="news">
       <div class="containerUI">
         <h2>Notícias</h2>
-        <div class="containerNew">
+        <div class="containerRow">
           <NewsHome />
           <RedirectsGrid />
         </div>
@@ -22,13 +23,24 @@
       </div>
     </section>
 
-    <div class="containerUI">
-      <h1>Corpo docente</h1>
-      <section id="team">
-        <TeatchersScroll :professor="{ name: 'Gus Frig' }" />
-        <TeatchersScroll :professor="{ name: 'Heisenberg' }" />
-      </section>
-    </div>
+    <section class="team">
+      <!-- colocar o team em um componente -->
+      <div class="containerUI">
+        <h1>Corpo docente</h1>
+        <div class="containerRow">
+          <TeatchersScroll :professor="{ name: 'Gus Frig' }" />
+          <TeatchersScroll :professor="{ name: 'Heisenberg' }" />
+        </div>
+      </div>
+      <div class="containerUI">
+        <h1>Coordenação</h1>
+        <div class="containerRow">
+          <TeatchersScroll :professor="{ name: 'John Snow' }" />
+          <TeatchersScroll :professor="{ name: 'Sansa Stark' }" />
+        </div>
+      </div>
+    </section>
+
     <section id="sourceUPE">
       <div class="containerUI">
         <h2>HISTÓRIA DA UPE</h2>
@@ -90,17 +102,21 @@ h1 {
   position: absolute;
   top: 1000;
   left: 0;
-  width: 98.6vw;         
-  height: 100%;         
-  object-fit: cover;     
-  z-index: -1;            
+  width: 98.6vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
   opacity: 0.7;
 }
 
-.containerNew {
+.containerRow {
   display: flex;
   flex-direction: row;
-  gap: 40px
+  gap: 40px;
 }
 
+.team {
+  display: flex;
+  flex-direction: row;
+}
 </style>
