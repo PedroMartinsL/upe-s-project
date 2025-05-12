@@ -1,5 +1,4 @@
 <template>
-  <div class="content">
     <section id="highlights">
       <h1><strong>Destaques</strong></h1>
       <hr />
@@ -56,7 +55,6 @@
         ></iframe>
       </div>
     </section>
-  </div>
 </template>
 
 <script>
@@ -98,15 +96,19 @@ h1 {
   text-align: center;
 }
 
+.course-section {
+  position: relative;
+  height: 800px;
+  width: 100%;
+}
+
 .image-background {
   position: absolute;
-  top: 1000;
-  left: 0;
-  width: 98.6vw;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
   opacity: 0.7;
+  z-index: -1;
 }
 
 .containerRow {

@@ -6,14 +6,17 @@
       <li v-for="news in currentPageNews" :key="news.id">
         <NewsComponent :news="news" />
       </li>
-      <div id="ui-skip">
-        <button @click="lastPage">&lt;</button>
-        <input type="number" v-model="pageIndex" />
-        <button @click="nextPage">&gt;</button>
-      </div>
+      <teleport to=".skip-block">  
+        <div id="ui-skip">
+          <button @click="lastPage">&lt;</button>
+          <input type="number" v-model="pageIndex" />
+          <button @click="nextPage">&gt;</button>
+        </div>
+      </teleport>
     </ul>
     <span v-else> Nenhuma notícia foi publicada ainda.</span>
   </div>
+  <div class="skip-block"></div>
   <span v-if="error">{{ error }}</span>
 </template>
 
@@ -129,6 +132,7 @@ export default {
   padding: 20px;
   margin-top: 20px;
 }
+
 ul {
   display: flex;
   flex-direction: column;
@@ -136,6 +140,11 @@ ul {
   row-gap: 20px;
   margin: 0;
   padding-inline-start: 0;
+}
+
+.skip-block {
+  padding: 40px;
+
 }
 
 li {

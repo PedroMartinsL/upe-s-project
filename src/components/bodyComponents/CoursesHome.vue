@@ -6,7 +6,7 @@
 
 <script>
 import esLogo from "@/assets/courses/es.png";
-import siLogo from "@/assets/courses/si.jpg";
+import siLogo from "@/assets/courses/si.png";
 
 import SingleCourse from "./SingleCourse.vue";
 export default {

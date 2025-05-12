@@ -46,31 +46,51 @@ export default {
 .unique {
   max-width: 300px;
   width: 100%;
-  overflow: hidden;
-  word-wrap: break-word;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   text-align: center;
-  border: 2px solid rgb(37, 37, 80);
+  transition: transform 0.2s ease-in-out;
+  cursor: default;
+}
+
+.unique:hover {
+  transform: translateY(-5px);
 }
 
 .unique img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  width: 250px;
+  height: 200px;
+  border-radius: 8px;
   margin-bottom: 1rem;
-}
-
-.desc {
-  background-color: rgb(176, 176, 176);
-  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .infoContainer {
-  background-color: rgb(203, 241, 241);
-  border-radius: 2px;
-  border: 1px solid black;
+  background-color: rgba(37, 37, 80, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.infoContainer h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #262166;
+  font-weight: 600;
+}
+
+.desc p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.desc p:first-child {
+  font-weight: 600;
+  color: #444;
 }
 </style>
