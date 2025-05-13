@@ -1,6 +1,6 @@
 <template>
   <transition name="fade-slide">
-  <aside class="sidebar" v-if="isActive">
+  <aside class="sidebar" v-if="this.$store.state.toggleSidebar">
     <ul>
       <li><router-link to="/">Início</router-link></li>
       <li><router-link to="/news">Notícias</router-link></li>

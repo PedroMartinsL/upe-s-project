@@ -15,29 +15,11 @@
 </template>
 
 <script>
-import { ref, provide } from "vue";
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 import SideBar from "./components/SideBar.vue";
 
 export default {
-  data() {
-    return {
-      toggleSidebar: false,
-    };
-  },
-  setup() {
-    const isActive = ref(false);
-
-    const toggleSidebar = () => {
-      isActive.value = !isActive.value;
-    };
-
-    provide("toggleSidebar", toggleSidebar);
-    provide("isActive", isActive);
-
-    return { isActive };
-  },
   components: {
     TheFooter,
     TheHeader,

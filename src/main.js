@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import { createStore } from 'vuex';
 
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './components/HomePage.vue'
@@ -13,6 +14,19 @@ import TeachingList from './components/teachingComponents/TeachingList.vue'
 import TeachingRedirect from './components/redirects/TeachingRedirect.vue'
 import NewsRedirect from './components/redirects/NewsRedirect.vue'
 import TeachingTab from './components/teachingComponents/TeachingTab.vue'
+
+const store = createStore({
+  state() {
+    return {
+      toggleSidebar: false,
+    };
+  },
+  mutations: {
+    togglerBar(state) {
+      state.toggleSidebar = !state.toggleSidebar;
+    }
+  }
+});
 
 const router = createRouter({
   history: createWebHistory(),
@@ -60,6 +74,7 @@ const router = createRouter({
 
 const app = createApp(App)
 
-app.use(router)
+app.use(router);
+app.use(store);
 
 app.mount('#app')

@@ -2,7 +2,7 @@
   <button
     v-show="!isWide"
     class="hamburger hamburger--collapse"
-    :class="{ 'is-active': isActive }"
+    :class="{ 'is-active': this.$store.state.toggleSidebar }"
     type="button"
     @click="toggleSidebar"
   >
@@ -29,8 +29,11 @@ export default {
     handleResize() {
       this.isWide = window.innerWidth >= 1100;
     },
+    toggleSidebar() {
+      // nome da mutation da main para alteração da barra
+      this.$store.commit('togglerBar')
+    }
   },
-  inject: ["toggleSidebar", "isActive"],
 };
 </script>
 
