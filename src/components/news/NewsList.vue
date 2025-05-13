@@ -41,8 +41,6 @@ export default {
       if (newsStore.error) {
         this.error = newsStore.error; 
       } else {
-        console.log("chegou aqui")
-        console.log(newsStore.newsList)
         this.allNews = newsStore.newsList; // Carrega as notícias da store
         this.loadRouteQuery(this.$route); // Filtra as notícias com base na rota
       }
