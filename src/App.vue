@@ -1,11 +1,11 @@
 <template>
   <div class="layout">
     <header>
-      <TheHeader :is-active="isActive" @toggle-aside="toggleSidebar" />
+      <TheHeader />
       <!-- emitindo o active para o controle do botão -->
       <!-- recebendo o método do header -->
     </header>
-    <SideBar :isActive="isActive" />
+    <SideBar />
     <main>
       <router-view></router-view>
     </main>

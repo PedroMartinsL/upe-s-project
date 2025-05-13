@@ -14,9 +14,6 @@
 </template>
 
 <script>
-export default {
-  props: ['isActive'], // Recebendo os dados e a função do Header
-};
 </script>
 
 <style scoped>
