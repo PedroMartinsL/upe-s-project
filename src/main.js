@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createStore } from 'vuex';
+import { createPinia } from 'pinia';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+
 
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './components/HomePage.vue'
@@ -18,7 +21,7 @@ import TeachingTab from './components/teachingComponents/TeachingTab.vue'
 const store = createStore({
   state() {
     return {
-      toggleSidebar: false,
+      toggleSidebar: false
     };
   },
   mutations: {
@@ -76,5 +79,9 @@ const app = createApp(App)
 
 app.use(router);
 app.use(store);
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+
+app.use(pinia);
 
 app.mount('#app')

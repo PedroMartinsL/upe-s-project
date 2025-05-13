@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { useNewsStore } from "@/store/news.js";
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 import SideBar from "./components/SideBar.vue";
@@ -25,6 +26,10 @@ export default {
     TheHeader,
     SideBar,
   },
+  created() {
+    const newsStore = useNewsStore();
+    newsStore.fetchNews();
+  }
 };
 </script>
 

@@ -22,7 +22,7 @@
 
 <script>
 import NewsComponent from "./NewsComponent.vue";
-import axios from "axios";
+import { useNewsStore } from "@/store/news.js";
 
 export default {
   data() {
@@ -35,35 +35,17 @@ export default {
     };
   },
   methods: {
-    async loadNews() {
-      axios
-        .get(
-          "https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/shelf.json"
-        )
-        .then((response) => {
-          const data = response.data;
-          const results = [];
+    loadNews() {
+      const newsStore = useNewsStore(); // Acessando a store
 
-          const reversedKeys = Object.keys(data).reverse();
-
-          for (const id of reversedKeys) {
-            results.push({
-              id: id,
-              title: data[id].title,
-              textBody: data[id].textBody,
-              references: data[id].references,
-              overview: data[id].overview,
-              published: data[id].published,
-              imgPath: data[id].imgPath,
-            });
-          }
-          this.allNews = results;
-          this.loadRouteQuery(this.$route);
-        })
-        .catch((error) => {
-          console.log(error);
-          this.error = "Failed to fetch data - please try again later";
-        });
+      if (newsStore.error) {
+        this.error = newsStore.error; 
+      } else {
+        console.log("chegou aqui")
+        console.log(newsStore.newsList)
+        this.allNews = newsStore.newsList; // Carrega as notícias da store
+        this.loadRouteQuery(this.$route); // Filtra as notícias com base na rota
+      }
     },
     loadRouteQuery(newRoute) {
       const query = newRoute.query?.search || "";
@@ -107,7 +89,7 @@ export default {
       return this.showNews.slice(startIndex, endIndex);
     },
   },
-  created() {
+  mounted() {
     this.loadNews();
   },
   watch: {
