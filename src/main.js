@@ -27,6 +27,18 @@ const store = createStore({
   mutations: {
     togglerBar(state) {
       state.toggleSidebar = !state.toggleSidebar;
+    },
+    setSidebarState(state, newState) {
+      state.toggleSidebar = newState;
+    }
+  },
+  actions: {
+    checkWindowSize({ state, commit }) {
+      const windowWidth = window.innerWidth;
+      // Se a largura for maior que 1100px, a sidebar deve ser fechada
+      if (windowWidth > 1100 && state.toggleSidebar) {
+        commit('setSidebarState', false);
+      }
     }
   }
 });
