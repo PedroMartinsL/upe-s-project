@@ -25,9 +25,11 @@ export default {
     };
   },
   mounted() {
+    const config = require('../../config');
+
     axios
       .get(
-        "https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/shelf.json"
+        `${config}/shelf.json`
       )
       .then((response) => {
         const data = response.data;

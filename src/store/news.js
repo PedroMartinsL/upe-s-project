@@ -16,12 +16,14 @@ export const useNewsStore = defineStore("news", {
 
   actions: {
     async fetchNews() {
+      const config = require('../config');
+
       this.isLoading = true;
       this.error = null; // Limpar qualquer erro anterior
 
       try {
         const response = await axios.get(
-          "https://vue-http-demo-2fdc2-default-rtdb.firebaseio.com/shelf.json"
+          `${config}/shelf.json`
         );
         const data = response.data;
         const results = [];
