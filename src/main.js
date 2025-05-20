@@ -17,6 +17,8 @@ import TeachingList from './components/teachingComponents/TeachingList.vue'
 import TeachingRedirect from './components/redirects/TeachingRedirect.vue'
 import NewsRedirect from './components/redirects/NewsRedirect.vue'
 import TeachingTab from './components/teachingComponents/TeachingTab.vue'
+import ContatoPage from './components/views/Contato.vue'
+
 
 const store = createStore({
   state() {
@@ -66,6 +68,13 @@ const router = createRouter({
         { name: 'news-page', path: ':id', component: NewsPage, props: true },
       ]
     },
+    
+    {
+      path: '/contato',
+      name: 'Contato',
+      component: ContatoPage
+    },
+    
     {
       name: 'ensino',
       path: '/ensino',
@@ -84,8 +93,12 @@ const router = createRouter({
       component: LoginPage 
     },
     { path: '/:notFound(.*)', component: NotFound }
+
+    
   ]
 })
+
+
 
 const app = createApp(App)
 
