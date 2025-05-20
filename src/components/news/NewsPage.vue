@@ -25,11 +25,10 @@ export default {
     };
   },
   mounted() {
-    const config = require('../../config');
-
+    const DATABASE_URL = process.env.VUE_APP_DATABASE_URL;
     axios
       .get(
-        `${config}/shelf.json`
+        `${DATABASE_URL}/shelf.json`
       )
       .then((response) => {
         const data = response.data;

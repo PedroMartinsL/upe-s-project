@@ -1,27 +1,27 @@
 <template>
-    <div class="context-home">
-    <div class="context-news">
-    <!-- Carregar as 2 últimas notícias -->
-    <a v-if="latestNews.length > 0" :href="'/news/' + latestNews[0].id">
-      <div class="dual-new">
-        <img :src="latestNews[0].imgPath" alt="Notícia 1">
-        <h1>{{ latestNews[0].title }}</h1>
-        <h2>{{ latestNews[0].published }}</h2>
-        <span>Leia Mais</span>
-      </div>
-    </a>
-    
-    <a v-if="latestNews.length > 1" :href="'/news/' + latestNews[1].id">
-      <div class="dual-new">
-        <img :src="latestNews[1].imgPath" alt="Notícia 2">
-        <h1>{{ latestNews[1].title }}</h1>
-        <h2>{{ latestNews[1].published }}</h2>
-        <span>Leia Mais</span>
-      </div>
-    </a>
+  <div class="context-home">
+    <div class="context-news" v-if="latestNews.length > 1">
+      <!-- Carregar as 2 últimas notícias -->
+      <a v-if="latestNews.length > 0" :href="'/news/' + latestNews[0].id">
+        <div class="dual-new">
+          <img :src="latestNews[0].imgPath" alt="Notícia 1" />
+          <h1>{{ latestNews[0].title }}</h1>
+          <h2>{{ latestNews[0].published }}</h2>
+          <span>Leia Mais</span>
+        </div>
+      </a>
+
+      <a v-if="latestNews.length > 1" :href="'/news/' + latestNews[1].id">
+        <div class="dual-new">
+          <img :src="latestNews[1].imgPath" alt="Notícia 2" />
+          <h1>{{ latestNews[1].title }}</h1>
+          <h2>{{ latestNews[1].published }}</h2>
+          <span>Leia Mais</span>
+        </div>
+      </a>
+    </div>
+    <button><router-link to="/news">Novidades</router-link></button>
   </div>
-  <button><router-link to="/news">Novidades</router-link></button>
-</div>
 </template>
 
 <script>
@@ -36,7 +36,7 @@ export default {
   computed: {
     newsStore() {
       return useNewsStore(); // Acessa a store de notícias
-    }
+    },
   },
   created() {
     this.loadLatestNews(); // Carrega as últimas notícias ao montar o componente
@@ -47,16 +47,16 @@ export default {
       if (news.length > 1) {
         this.latestNews = news.slice(0, 2); // Pega as duas primeiras notícias
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.context-home{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.context-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .context-news {
@@ -128,7 +128,7 @@ export default {
 }
 
 button {
-    align-self: center;
+  align-self: center;
   background-color: #d7263d;
   border: none;
   color: white;

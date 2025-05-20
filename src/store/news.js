@@ -16,14 +16,14 @@ export const useNewsStore = defineStore("news", {
 
   actions: {
     async fetchNews() {
-      const config = require('../config');
+      const DATABASE_URL = process.env.VUE_APP_DATABASE_URL;
 
       this.isLoading = true;
       this.error = null; // Limpar qualquer erro anterior
 
       try {
         const response = await axios.get(
-          `${config}/shelf.json`
+          `${DATABASE_URL}/shelf.json`
         );
         const data = response.data;
         const results = [];
