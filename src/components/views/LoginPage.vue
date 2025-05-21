@@ -1,45 +1,83 @@
 <template>
   <div class="form-wrapper">
     <div class="primeira">
-      <form class="form">
-        <h1> Cadastrar </h1>
+      <form class="form" @submit.prevent="register">
+        <h1>Cadastrar</h1>
 
         <label>
-          <span> Seu Email</span>
-          <input type="email" name="email" />
+          <span>Seu Email</span>
+          <input type="email" v-model="registerEmail" />
         </label>
 
         <label>
-          <span> Senha</span>
-          <input type="password" name="password" />
+          <span>Senha</span>
+          <input type="password" v-model="registerPassword" />
         </label>
 
-        <button class="submit" type="button">Cadastrar - Clique Aqui</button>
+        <button class="submit" type="submit">Cadastrar - Clique Aqui</button>
       </form>
     </div>
 
     <div class="segunda">
-      <form class="form">
-        <h1> Logar </h1>
+      <form class="form" @submit.prevent="login">
+        <h1>Logar</h1>
 
         <label>
-          <span> Seu Email</span>
-          <input type="email" name="email" />
+          <span>Seu Email</span>
+          <input type="email" v-model="loginEmail" />
         </label>
 
         <label>
-          <span> Senha</span>
-          <input type="password" name="password" />
+          <span>Senha</span>
+          <input type="password" v-model="loginPassword" />
         </label>
 
-        <button class="submit" type="button">Logar - Clique Aqui</button>
+        <button class="submit" type="submit">Logar - Clique Aqui</button>
       </form>
     </div>
   </div>
 </template>
 
-<script setup>
-// Por enquanto vazio
+<script>
+import { mapActions } from 'vuex'
+
+export default {
+  data() {
+    return {
+      registerEmail: '',
+      registerPassword: '',
+      loginEmail: '',
+      loginPassword: ''
+    }
+  },
+  methods: {
+    ...mapActions(['register', 'login']),
+    async register() {
+      try {
+        await this.register({
+          email: this.registerEmail,
+          password: this.registerPassword
+        })
+        alert('Usuário cadastrado com sucesso!')
+        this.$router.push('/')
+      } catch (error) {
+        alert(error.message)
+      }
+    },
+    async login() {
+      try {
+        await this.login({
+          email: this.loginEmail,
+          password: this.loginPassword
+        })
+        alert('Login realizado com sucesso!')
+        this.$router.push('/')
+      } catch (error) {
+        alert(error.message)
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
