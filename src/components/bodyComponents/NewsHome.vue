@@ -20,7 +20,7 @@
         </div>
       </a>
     </div>
-    <button><router-link to="/news">Novidades</router-link></button>
+    <button id="newbutton"><router-link to="/news">Novidades</router-link></button>
   </div>
 </template>
 
@@ -137,7 +137,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin-left: 20px;
-  width: 50%;
+  width: 80%;
 }
 
 button a {
