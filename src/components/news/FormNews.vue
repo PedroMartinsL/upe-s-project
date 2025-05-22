@@ -55,7 +55,7 @@ export default {
       try {
         const DATABASE_URL = process.env.VUE_APP_DATABASE_URL;
         await axios.post(
-          `${DATABASE_URL}/shelf.json`,
+          `${DATABASE_URL}/shelf.json`, //
           {
             title: this.enteredTitle,
             overview: this.overview,

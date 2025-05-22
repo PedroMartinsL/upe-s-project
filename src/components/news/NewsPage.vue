@@ -28,7 +28,7 @@ export default {
     const DATABASE_URL = process.env.VUE_APP_DATABASE_URL;
     axios
       .get(
-        `${DATABASE_URL}/shelf.json`
+        `${DATABASE_URL}/shelf.json` //
       )
       .then((response) => {
         const data = response.data;

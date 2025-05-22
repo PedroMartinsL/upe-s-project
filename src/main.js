@@ -24,14 +24,14 @@ const store = createStore({
   state() {
     return {
       toggleSidebar: false
-    };
+    };  // 
   },
   mutations: {
     togglerBar(state) {
       state.toggleSidebar = !state.toggleSidebar;
     },
     setSidebarState(state, newState) {
-      state.toggleSidebar = newState;
+      state.toggleSidebar = newState; //
     }
   },
   actions: {
