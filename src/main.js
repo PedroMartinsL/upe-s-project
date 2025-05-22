@@ -18,6 +18,11 @@ import TeachingRedirect from './components/redirects/TeachingRedirect.vue'
 import NewsRedirect from './components/redirects/NewsRedirect.vue'
 import TeachingTab from './components/teachingComponents/TeachingTab.vue'
 import ContatoPage from './components/views/Contato.vue'
+import ResearchHome from './components/research/ResearchHome.vue'
+import ResearchCatalog from './components/research/ResearchCatalog.vue'
+import ResearchPrograms from './components/research/ResearchPrograms.vue'
+import ResearchSapiens from './components/research/ResearchSapiens.vue'
+
 
 
 const store = createStore({
@@ -92,6 +97,21 @@ const router = createRouter({
       name: 'Login',
       component: LoginPage 
     },
+
+    {
+      path: '/pesquisa',
+      component: ResearchHome,
+      children: [
+        { path: 'catalogo', component: ResearchCatalog },
+        { path: 'programas', component: ResearchPrograms },
+        { path: 'sapiens', component: ResearchSapiens }
+      ]
+    },
+    
+
+
+
+
     { path: '/:notFound(.*)', component: NotFound }
 
     

@@ -18,7 +18,8 @@
       </li>
 
       <li>
-        <router-link to="/pesq-ext">Pesquisa e Extensão</router-link>
+        <router-link to="/pesq-ext">Pesquisa e Extensão</router-link> 
+        <!-- Preciso ver direiro essa parada da rotas -->
       </li>
       <li>
         <router-link to="/contato">Contato</router-link>
