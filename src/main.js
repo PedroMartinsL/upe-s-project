@@ -22,6 +22,9 @@ import ResearchHome from './components/research/ResearchHome.vue'
 import ResearchCatalog from './components/research/ResearchCatalog.vue'
 import ResearchPrograms from './components/research/ResearchPrograms.vue'
 import ResearchSapiens from './components/research/ResearchSapiens.vue'
+import ProfessoresHome from './components/teachingComponents/ProfessoresHome.vue'
+import ResearchRedirect from './components/redirects/ResearchRedirect.vue';
+
 
 
 
@@ -90,6 +93,7 @@ const router = createRouter({
         {name: 'tab', path: '', component: TeachingTab, props: true },
         { name: 'cursos', path: 'cursos', component: TeachingList, props: true },
         { name: 'course', path: 'cursos/:courseId', component: CoursesUPE, props: true },
+        { name: 'professores', path: 'professores', component: ProfessoresHome }
       ]
     },
     {
@@ -100,18 +104,14 @@ const router = createRouter({
 
     {
       path: '/pesquisa',
-      component: ResearchHome,
+      component: ResearchRedirect,
       children: [
-        { path: 'catalogo', component: ResearchCatalog },
-        { path: 'programas', component: ResearchPrograms },
-        { path: 'sapiens', component: ResearchSapiens }
+        { path: '', component: ResearchHome, name: 'research' },
+        { path: 'catalogo', component: ResearchCatalog, name: 'catalogo' },
+        { path: 'programas', component: ResearchPrograms, name: 'programas' },
+        { path: 'sapiens', component: ResearchSapiens, name: 'sapiens' }
       ]
     },
-    
-
-
-
-
     { path: '/:notFound(.*)', component: NotFound }
 
     

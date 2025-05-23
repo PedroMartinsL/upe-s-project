@@ -80,15 +80,6 @@ export default {
   display: block;
 }
 
-.dual-new h1,
-.dual-new h2,
-.dual-new span {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  padding: 0;
-}
-
 .dual-new::after {
   content: "";
   position: absolute;
@@ -106,6 +97,9 @@ export default {
   position: absolute;
   left: 10px;
   color: white;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
 }
 
 .dual-new h1 {

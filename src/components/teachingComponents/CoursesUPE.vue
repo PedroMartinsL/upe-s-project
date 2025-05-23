@@ -58,7 +58,9 @@ export default {
   methods: {
     loadCourse() {
       const curso = cursos.find((c) => c.route === this.courseId);
+      console.log("chegou");
       if (curso) {
+        console.log("chegou2");
         this.course = {
           nome: curso.nome,
           sobre: curso.sobre,
@@ -68,6 +70,7 @@ export default {
           route: curso.route,
         };
       } else {
+        console.log("chegou3");
         this.course = null;
       }
     },

@@ -7,7 +7,8 @@
     </header>
     <SideBar />
     <main>
-      <router-view></router-view>
+      <router-view></router-view> 
+      <!--  -->
     </main>
 
     <TheFooter />
