@@ -64,7 +64,6 @@ export default {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  font-family: 'Roboto', sans-serif;
 }
 
 h1 {

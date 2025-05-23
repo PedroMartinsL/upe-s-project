@@ -50,9 +50,7 @@ export default {
 
 h2 {
   margin: 0 0 15px;
-  font-size: 20px;
   color: #34404e;
-  font-family: Roboto Condensed;
   font-size: 23px;
   font-weight: 400;
   margin-bottom: 10px;
@@ -62,7 +60,6 @@ h2 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 header {

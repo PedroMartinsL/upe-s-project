@@ -90,7 +90,6 @@ export default {
 
 h1 {
   color: #262166;
-  font-family: "Roboto", Sans-serif;
   font-size: 40px;
   font-weight: 600;
   text-align: center;

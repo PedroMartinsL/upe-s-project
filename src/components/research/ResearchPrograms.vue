@@ -63,7 +63,6 @@
     padding: 30px;
     max-width: 900px;
     margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #222;
   }

@@ -96,7 +96,7 @@ export default {
     },
     pageIndex(valor) {
       if (valor >= 1 && valor <= this.totalPages) {
-        this.currentPageNews;
+        return this.currentPageNews;
       } else {
         throw new Error("Índice de página inválido. Deve ser >= 1.");
       }
@@ -177,8 +177,6 @@ h1 {
   margin: 0 0 15px;
   font-size: 35px;
   color: #444444;
-  font-family: Roboto Condensed;
-
   unicode-bidi: isolate;
 }
 

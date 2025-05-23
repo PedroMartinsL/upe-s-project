@@ -49,7 +49,6 @@
   .research-container {
     display: flex;
     padding: 30px;
-    font-family: 'Roboto', sans-serif;
   }
   
   .sidebar {

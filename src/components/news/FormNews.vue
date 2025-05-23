@@ -87,7 +87,6 @@ export default {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  font-family: "Roboto", sans-serif;
 }
 
 form {
@@ -139,7 +138,6 @@ button[type="submit"]:hover {
 
 h1 {
   color: #ed1c24;
-  font-family: "Roboto", sans-serif;
   font-size: 36px;
   font-weight: 700;
   text-align: center;
