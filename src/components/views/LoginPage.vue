@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import axios from 'axios'
 
 export default {
   data() {
@@ -51,29 +51,43 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['register', 'login']),
     async register() {
       try {
-        await this.register({
+        const DATABASE_URL = process.env.VUE_APP_DATABASE_URL
+        await axios.post(`${DATABASE_URL}/users.json`, {
           email: this.registerEmail,
-          password: this.registerPassword
+          password: this.registerPassword,
+          createdAt: new Date().toISOString()
         })
+
         alert('Usuário cadastrado com sucesso!')
+        this.registerEmail = ''
+        this.registerPassword = ''
         this.$router.push('/')
       } catch (error) {
-        alert(error.message)
+        alert('Erro no cadastro: ' + error.message)
       }
     },
     async login() {
       try {
-        await this.login({
-          email: this.loginEmail,
-          password: this.loginPassword
-        })
-        alert('Login realizado com sucesso!')
-        this.$router.push('/')
+        const DATABASE_URL = process.env.VUE_APP_DATABASE_URL
+        const res = await axios.get(`${DATABASE_URL}/users.json`)
+        const users = res.data
+
+        const userFound = Object.values(users).find(
+          u => u.email === this.loginEmail && u.password === this.loginPassword
+        )
+
+        if (userFound) {
+          alert('Login realizado com sucesso!')
+          this.loginEmail = ''
+          this.loginPassword = ''
+          this.$router.push('/')
+        } else {
+          alert('Email ou senha inválidos!')
+        }
       } catch (error) {
-        alert(error.message)
+        alert('Erro no login: ' + error.message)
       }
     }
   }
