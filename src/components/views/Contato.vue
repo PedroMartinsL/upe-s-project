@@ -14,32 +14,30 @@
   
       <!-- Mapa -->
       <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.964118453755!2d-35.96309262596845!3d-8.26388839177343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a8a4fc29ab1d55%3A0x2e74e3c4a9bdb6b4!2sUPE%20Caruaru%20-%20Universidade%20de%20Pernambuco!5e0!3m2!1spt-BR!2sbr!4v1716220556920!5m2!1spt-BR!2sbr"
-          width="100%"
-          height="300"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4445.171407658694!2d-35.76324027446395!3d-7.834229485974291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7abdb5b3d683f9f%3A0xeb287f4fd2e44220!2sEscola%20T%C3%A9cnica%20Estadual%20Ant%C3%B4nio%20Arruda%20de%20Farias!5e0!3m2!1sen!2sbr!4v1748211700536!5m2!1sen!2sbr" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
       </div>
   
-      <!-- Informações -->
+      <!-- Informações de Contato -->
       <div class="info-container">
         <h2>Informações</h2>
-        <p><strong>Endereço:</strong> Av. Projetada 01, SN, Nova Caruaru, Caruaru - PE, CEP 55.014-908</p>
+        <p><strong>Endereço:</strong> Rua Antônio Heráclito do Rego, S/N - Centro, Surubim - PE; CEP: 55750-000</p>
         <p><strong>Escolaridade:</strong> escolaridade.caruaru@upe.br</p>
-        <p><strong>Recursos Humanos:</strong> rh.caruaru@upe.br</p>
+        <p><strong>Cursos oferecidos:</strong> Bacharelado em Sistemas de Informação e Engenharia de Software, cada um com 30 vagas.</p>
   
         <h2>Contatos Coordenação do Campus</h2>
         <p><strong>Coordenação Acadêmica:</strong> coordenacao.caruaru@upe.br</p>
         <p><strong>Coordenação Acadêmica SI:</strong> coordenacao.sicaruaru@upe.br</p>
         <p><strong>Coordenação Acadêmica ADM:</strong> coord.administracao.caruaru@upe.br</p>
-        <p><strong>Coordenação de Estágio:</strong> estagio.caruaru@upe.br</p>
   
         <h3 class="disponivel">DISPONÍVEL DAS 08:00 – 22:00</h3>
-        <h1 class="telefone">81 3719-9448</h1>
+        <h1 class="telefone">(81) 99488-4069</h1>
       </div>
     </div>
   </template>
@@ -66,7 +64,7 @@
   }
   
   .banner h1 {
-    color: white;
+    color: rgb(56, 36, 238);
     font-size: 40px;
     font-weight: bold;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);

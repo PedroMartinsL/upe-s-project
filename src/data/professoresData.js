@@ -1,15 +1,15 @@
 export default {
     professores: [
-      { nome: 'Prof. Ana Lima', disciplinas: ['Engenharia de Requisitos', 'DevOps'] },
-      { nome: 'Prof. João Sousa', disciplinas: ['Arquitetura de Software'] },
-      { nome: 'Prof. Carla Mendes', disciplinas: ['Testes de Software'] }
+      { nome: 'Prof. Amanda Fernandes', disciplinas: ['Probabilidade e Estatística'] },
+      { nome: 'Prof. Emanuele Diógenes', disciplinas: ['Matemática Discreta'] },
+      { nome: 'Prof. Rubens Karman', disciplinas: ['Algoritmo e Estrutura de Dados'] }
     ],
     coordenadoresCurso: [
-      { curso: 'Engenharia de Software', nome: 'Prof. Marcos Silva' },
-      { curso: 'Sistemas de Informação', nome: 'Prof. Juliana Rocha' }
+      { curso: 'Engenharia de Software', nome: 'Prof. Augusto Cesar Oliveira' },
+      { curso: 'Sistemas de Informação', nome: 'Prof. Domingos Sávio Jr.' }
     ],
     coordenadoresGerais: [
-      { nome: 'Prof. Eduardo Castro' }
+      { nome: 'Gevson Silva Andrade' }
     ]
   }
   
