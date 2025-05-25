@@ -27,19 +27,25 @@ import ResearchRedirect from './components/redirects/ResearchRedirect.vue';
 
 
 
-
 const store = createStore({
   state() {
     return {
-      toggleSidebar: false
-    };  // 
+      toggleSidebar: false,
+      userLogin: null,
+    };
   },
   mutations: {
     togglerBar(state) {
       state.toggleSidebar = !state.toggleSidebar;
     },
     setSidebarState(state, newState) {
-      state.toggleSidebar = newState; //
+      state.toggleSidebar = newState;
+    },
+    setUserLogin(state, userData) {
+      state.userLogin = userData;
+    },
+    clearUserLogin(state) {
+      state.userLogin = null;
     }
   },
   actions: {
@@ -52,6 +58,7 @@ const store = createStore({
     }
   }
 });
+
 
 const router = createRouter({
   history: createWebHistory(),
