@@ -43,10 +43,8 @@ const store = createStore({
     },
     setUserLogin(state, userData) {
       state.userLogin = userData;
-    },
-    clearUserLogin(state) {
-      state.userLogin = null;
     }
+    
   },
   actions: {
     checkWindowSize({ state, commit }) {

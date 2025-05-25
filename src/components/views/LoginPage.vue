@@ -79,6 +79,9 @@ export default {
         )
 
         if (userFound) {
+          //Gabriel -> Lembrar que isso envia o e-mail para o Vuex (store)
+          this.$store.commit('setUserLogin', this.loginEmail)
+
           alert('Login realizado com sucesso!')
           this.loginEmail = ''
           this.loginPassword = ''
