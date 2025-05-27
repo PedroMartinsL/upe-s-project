@@ -1,0 +1,19 @@
+# Ignorar a pasta node_modules
+node_modules
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar diretórios e arquivos de controle do Git
+.git
+.gitignore
+
+# Ignorar arquivos de configuração do Docker
+Dockerfile
+.dockerignore
+
+# Ignorar a pasta de build
+dist
+
+# Ignorar arquivos de documentação
+README.md
