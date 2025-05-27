@@ -1,6 +1,7 @@
 <template>
   <div class="content">
     <h1>Notícias</h1>
+    <router-link to="/news/submit"><button id="submit-news">Submeter notícia</button></router-link>
     <ul v-if="hasNotice">
       <!-- o currentPageNews faz a leitura dinâmica da página atual -->
       <li v-for="news in currentPageNews" :key="news.id">
@@ -185,5 +186,17 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+#submit-news { 
+  background-color: rgb(167, 38, 38);
+  color: white;
+  font-size: 1em;
+  padding: 10px 15px;
+  border-radius: 5px;
+  width: 20%;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
 }
 </style>
