@@ -8,7 +8,7 @@
       <a href="/docs/calendario.pdf" target="_blank"> Calendario </a>
     </div>
     <div class="redirect-panel yellow">
-      <router-link to="/alguma-rota"> Editais </router-link>
+      <a href="https://www.upe.br/editais.html" target="_blank"> Editais </a>
     </div>
   </div>
 </template>
