@@ -44,8 +44,7 @@ export const useNewsStore = defineStore("news", {
 
         this.newsList = results;
       } catch (error) {
-        console.error(error);
-        this.error = "Failed to fetch data - please try again later";
+        console.log(error);
       } finally {
         this.isLoading = false;
       }

@@ -1,5 +1,6 @@
 <template>
-  <div class="containerUI">
+  <div class="containerUI" v-if="userLogin">
+  <!-- <div class="containerUI"> -->
     <h1>Formulário de notícias</h1>
     <form @submit.prevent="postForm">
       <label for="title">Título da sua notícia</label>
@@ -16,9 +17,12 @@
       <label for="references">Referências</label>
       <input type="text" v-model.trim="references" id="references" />
       <label for="image">Imagem</label>
-      <input type="file" @change="onFileChange" id="image" />
+      <input type="file" @change="onFileChange" id="image" ref="fileInput"/>
       <button type="submit">Enviar</button>
     </form>
+  </div>
+  <div v-else>
+    <p>Você deve estar logado para submeter uma notícia, tente: <router-link to="/login">Login</router-link></p>
   </div>
 </template>
 
@@ -63,6 +67,7 @@ export default {
             published: "Publicado em " + dataFormatada,
             references: this.references,
             imgPath: this.imageBase64,
+            userLogin: this.userLogin
           }
         );
 
@@ -70,12 +75,17 @@ export default {
         this.overview = "";
         this.textBody = "";
         this.references = "";
-        this.imgPath = null;
+        this.$refs.fileInput.value = "";
       } catch (err) {
         console.error("Erro ao enviar notícia:", err);
       }
     },
   },
+  computed: {
+  userLogin() {
+    return this.$store.state.userLogin;
+  }
+}
 };
 </script>
 
