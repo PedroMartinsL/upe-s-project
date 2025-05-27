@@ -1,13 +1,11 @@
 <template>
     <div>
-      <!-- Banner com título -->
       <section class="banner">
         <div class="banner-overlay">
           <h1>Entre em contato</h1>
         </div>
       </section>
   
-      <!-- Breadcrumb -->
       <div class="breadcrumb">
         <router-link to="/home">Casa</router-link> › Contato
       </div>
@@ -23,8 +21,8 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
       </div>
+
   
-      <!-- Informações de Contato -->
       <div class="info-container">
         <h2>Informações</h2>
         <p><strong>Endereço:</strong> Rua Antônio Heráclito do Rego, S/N - Centro, Surubim - PE; CEP: 55750-000</p>
@@ -49,7 +47,6 @@
   </script>
   
   <style scoped>
-  /* Banner */
   .banner {
     height: 180px;
     background: linear-gradient(to bottom, #f7f7f7 0%, #ccc 50%, #f7f7f7 100%);
@@ -70,7 +67,6 @@
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   }
   
-  /* Breadcrumb */
   .breadcrumb {
     font-size: 14px;
     margin: 15px 40px;
@@ -86,14 +82,12 @@
     text-decoration: underline;
   }
   
-  /* Mapa */
   .map-container {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
   }
   
-  /* Informações */
   .info-container {
     max-width: 800px;
     margin: auto;
