@@ -49,7 +49,7 @@
   <style scoped>
   .banner {
     height: 180px;
-    background: linear-gradient(to bottom, #f7f7f7 0%, #ccc 50%, #f7f7f7 100%);
+    background-color: #132d47;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,10 +61,9 @@
   }
   
   .banner h1 {
-    color: rgb(56, 36, 238);
+    color: white;
     font-size: 40px;
     font-weight: bold;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   }
   
   .breadcrumb {
