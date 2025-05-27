@@ -27,15 +27,15 @@
       <div class="containerUI">
         <h1>Corpo docente</h1>
         <div class="containerRow">
-          <TeatchersScroll :professor="{ name: 'Domingos' }" />
-          <TeatchersScroll :professor="{ name: 'Augusto' }" />
+          <TeatchersScroll :profile="require('@/assets/teatchersList/domingos.jpg')" :professor="{ name: 'Domingos' }" />
+          <TeatchersScroll :profile="require('@/assets/teatchersList/augusto.jpg')" :professor="{ name: 'Augusto' }" />
         </div>
       </div>
       <div class="containerUI">
         <h1>Coordenação</h1>
         <div class="containerRow">
-          <TeatchersScroll :professor="{ name: 'Gevson' }" />
-          <TeatchersScroll :professor="{ name: 'Raquel Lyra' }" />
+          <TeatchersScroll :profile="require('@/assets/teatchersList/gevson.png')" :professor="{ name: 'Gevson' }" />
+          <TeatchersScroll :profile="require('@/assets/teatchersList/raquel.jpg')" :professor="{ name: 'Raquel Lyra' }" />
         </div>
       </div>
     </section>
